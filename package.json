@@ -1,0 +1,38 @@
+{
+	"name": "@kcp/starboard",
+	"version": "1.0.0",
+	"description": "A simple Starboard plugin that adds Starboard features to bots using klasa",
+	"homepage": "https://github.com/KlasaCommunityPlugins/starboard",
+	"bugs": {
+		"url": "https://github.com/KlasaCommunityPlugins/starboard/issues"
+	},
+	"license": "MIT",
+	"author": "KlasaCommunityPlugins",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/KlasaCommunityPlugins/starboard.git"
+	},
+	"scripts": {
+		"test:lint": "yarn tslint 'src/*.ts' && yarn eslint --config .eslintrcmd.json --ext md guides && yarn markdownlint guides README.md",
+		"build": "yarn tsc",
+		"docs": "yarn build && yarn dg --source dist --custom guides/.docconfig.json --output dist/docs.json --logging"
+	},
+	"peerDependencies": {
+		"discord.js": "github:discordjs/discord.js#master",
+		"klasa": "github:dirigeants/klasa#master"
+	},
+	"devDependencies": {
+		"@kcp/lint": "github:KlasaCommunityPlugins/lint-files",
+		"@types/node": "^11.13.6",
+		"@types/ws": "^6.0.1",
+		"discord.js": "discordjs/discord.js",
+		"docgen": "dirigeants/docsgen",
+		"eslint-config-klasa": "dirigeants/klasa-lint",
+		"klasa": "dirigeants/klasa",
+		"markdownlint-cli": "^0.15.0",
+		"tslint": "^5.16.0",
+		"typescript": "^3.4.4"
+	}
+}
